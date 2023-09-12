@@ -25,12 +25,12 @@ void showDatabase(vector<Student>& db);
 
 int main()
 {
-    //experiment01();
-    //experiment02();
-    //experiment03();
-    //experiment04(); //read disk data, make memory database
-    //experiment05();
-    experiment06();
+    //experiment01();   //differences between STACK and HEAP stored data
+    //experiment02();   //read data from a disk file
+    //experiment03();   //create a Student object
+    //experiment04();   //read student disk data, make a memory resident database
+    //experiment05();   //compare vector of pointers and vector of instances
+    experiment06();     //using static variables and functions
 
     std::cout << "\nAll done!\n";
 }
