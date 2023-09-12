@@ -13,8 +13,10 @@ private:
     string name;
     string id;
     vector<string> courses;
+    static int counter;
 
 public:
+
     //Mutators
     void setName(string nameValue) {
         // TODO - make a titlecap function 
@@ -45,8 +47,10 @@ public:
         setId(idValue);
         setName(nameValue);
         setCourses(courseCollectionValue);
-
+        counter++;
     }
+
+    int static getCounter() { return counter; }
 
     //User-defined methods
     string toString() {
@@ -64,3 +68,5 @@ public:
 
 };
 
+//initialize static variable
+int Student::counter = 0;

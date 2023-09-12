@@ -15,6 +15,8 @@ void experiment02();
 void experiment03();
 void experiment04();
 void experiment05();
+void experiment06();
+
 
 void makeDatabase(vector<Student>& db);
 void showDatabase(vector<Student>& db);
@@ -27,7 +29,8 @@ int main()
     //experiment02();
     //experiment03();
     //experiment04(); //read disk data, make memory database
-    experiment05();
+    //experiment05();
+    experiment06();
 
     std::cout << "\nAll done!\n";
 }
@@ -180,5 +183,27 @@ void experiment05()
     cout << s1->toString() << endl;
     delete s1;
     delete s2;
-    cout << s1->toString() << endl;         //ERROR!!! 
+   // cout << s1->toString() << endl;         //ERROR!!! 
+}
+
+void experiment06()
+{
+    //cout << "Total students: " << Student::counter << endl;
+    cout << "Total students: " << Student::getCounter() << endl;
+
+    vector<string> vcourse{ "CS1", "CS2", "CS3" };
+    Student* s1 = new Student("2023-1111", "Carmen San Diego", vcourse);  //HEAP
+    Student* s2 = new Student("2023-2222", "Jon Snow", vcourse);        //HEAP;
+
+    //cout << "Total students: " << Student::counter << endl;
+    cout << "Total students: " << Student::getCounter() << endl;
+    cout << "Total students: " << s1->getCounter() << endl;
+
+    Student s3 = *s1;
+
+    cout << "s3 " << s3.toString() << endl;
+    cout << "s1 " << s1->toString() << endl;
+    s3.setName("Arya Stark");
+    cout << "s3 " << s3.toString() << endl;
+    cout << "s1 " << s1->toString() << endl;
 }
